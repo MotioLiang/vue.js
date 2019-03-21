@@ -1,0 +1,91 @@
+.search{
+  height: 100%;
+  position: relative;
+  .header{
+    display: flex;
+    height: 91rpx;
+    padding: 0 32rpx;
+    align-items: center;
+    justify-content: space-around;
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    div:nth-child(1) {
+      display: flex;
+      height: 59rpx;
+      flex-direction: row;
+      align-items: center;
+      background: #f4f4f4;
+      img{
+        width: 31rpx;
+        height: 31rpx;
+        padding: 0 20rpx;
+      }
+      input{
+        width: 480rpx;
+        height: 59rpx;
+        margin-left: 10rpx;
+      }
+      .del{
+        width: 53rpx;
+        height: 53rpx;
+        padding: 0;
+      }
+    }
+    div:nth-child(2){
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+  .search-tips{
+    position: absolute;
+    width: 100%;
+    top: 91rpx;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    padding: 0 32px;
+    z-index: 9;
+    background: #fff;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    div{
+      padding: 20rpx 0;
+    }
+    .nogoods{
+      text-align: center;
+      margin-top: 300rpx;
+    }
+  }
+
+  .history{
+    padding: 32rpx;
+    background: #fff;
+    .title{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30rpx;
+      div:nth-child(2){
+        width: 55rpx;
+        height: 55rpx;
+        background: url('http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/del1-93f0a4add4.png') no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+    .content{
+      display: flex;
+      flex-wrap: wrap;
+      div{
+        padding: 10rpx;
+        border: 1rpx solid #999;
+        margin: 0 30rpx 20rpx 0;
+      }
+      .active{
+        border: 1rpx solid #b4282d;
+        color: #b4282d;
+      }
+    }
+  }
+}
