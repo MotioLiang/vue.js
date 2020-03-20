@@ -2,7 +2,7 @@
   .home
     img(:src="getImgUrl('logo.png')" alt="logo")
     base-hello(msg="Home")
-    svg-icon(icon-class="1" @click="handleSvg")
+    svg-icon(class="svg-rigth" icon-class="1" @click="handleSvg")
 </template>
 
 <script>
@@ -32,3 +32,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.svg-rigth {
+  width: 20px;
+  height: 20px;
+}
+</style>
