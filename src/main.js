@@ -1,14 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
 import 'normalize.css'
-import router from './router'
-import store from './store/index'
-import './components'
-import './filters/index'
-import './plugins/element.js'
-import './plugins/axios'
+import router from '@/router'
+import store from '@/store/index'
+import '@/permission'
+import '@/components'
+import '@/filters/index'
+import '@/plugins/element.js'
+import '@/plugins/axios'
 
-import "./assets/icons";
+import "@/assets/icons";
 
 
 

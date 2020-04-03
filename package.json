@@ -1,5 +1,5 @@
 {
-  "name": "my-project",
+  "name": "vue-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,6 +13,8 @@
     "core-js": "^2.6.5",
     "dayjs": "^1.8.14",
     "element-ui": "^2.4.5",
+    "idb": "^5.0.2",
+    "js-cookie": "^2.2.1",
     "lodash": "^4.17.15",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
