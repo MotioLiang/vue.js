@@ -5,19 +5,28 @@ module.exports = {
   },
   'extends': [
     'plugin:vue/essential',
-    '@vue/standard'
+    'eslint:recommended'
   ],
-  rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
-  },
   parserOptions: {
     parser: 'babel-eslint'
   },
   'globals': {
     'document': true,
     'localStorage': true,
-    'sessionStorage': true,
-    'zykc': true
+    'sessionStorage': true
+  },
+  rules: {
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    // js单引号
+    "quotes": [1, "single"],
+    // 缩进风格
+    'indent': [2, 2, {
+      'SwitchCase': 1
+    }],
+    //  结尾不要分号
+    'semi': [2, 'never'],
+    // 禁用 eval()
+    "no-eval": 2
   }
 }

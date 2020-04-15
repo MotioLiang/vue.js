@@ -5,13 +5,9 @@ import router from '@/router'
 import store from '@/store/index'
 import '@/permission'
 import '@/components'
-import '@/filters/index'
-import '@/plugins/element.js'
-import '@/plugins/axios'
-
-import "@/assets/icons";
-
-
+import '@/plugins'
+import '@/filters'
+import '@/assets/icons'
 
 Vue.config.errorHandler = function (err, vm, info) {
   console.log(err, vm, info)
