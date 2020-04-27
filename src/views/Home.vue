@@ -11,22 +11,22 @@ import { createNamespacedHelpers } from 'vuex'
 const { mapState } = createNamespacedHelpers('user')
 
 export default {
-  name: 'home',
+    name: 'Home',
 
-  computed: {
-    ...mapState(['userName'])
-  },
+    computed: {
+        ...mapState(['userName'])
+    },
 
-  mounted() {
-    console.log(this.$store)
-    console.log(this.userName)
-  },
+    mounted() {
+        console.log(this.$store)
+        console.log(this.userName)
+    },
 
-  methods: {
-    handleSvg() {
-      console.log('点击svg')
+    methods: {
+        handleSvg() {
+            console.log('点击svg')
+        }
     }
-  }
 }
 </script>
 
@@ -35,7 +35,7 @@ export default {
 //   background: url(../assets/images/logo.png);
 // }
 .svg-rigth {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 }
 </style>

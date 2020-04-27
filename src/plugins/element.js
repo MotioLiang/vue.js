@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import {
-  Button,
-  Message,
-  MessageBox
+    Button,
+    Message,
+    MessageBox
 } from 'element-ui'
 
 Vue.use(Button)

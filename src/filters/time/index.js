@@ -8,10 +8,10 @@ import dayjs from 'dayjs'
  * @returns
  */
 function parseTime(time, format = 'YYYY-MM-DD HH:mm:ss') {
-  const timeStr = dayjs(time).format(format)
-  return timeStr
+    const timeStr = dayjs(time).format(format)
+    return timeStr
 }
 
 export default {
-  parseTime
+    parseTime
 }

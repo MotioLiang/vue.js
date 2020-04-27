@@ -10,7 +10,7 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint'
   },
-  'globals': {
+  globals: {
     'document': true,
     'localStorage': true,
     'sessionStorage': true

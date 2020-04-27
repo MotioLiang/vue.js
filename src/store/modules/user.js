@@ -1,9 +1,9 @@
 const state = {
-  userName: 'motioLiang',
-  userId: '123456'
+    userName: 'motioLiang',
+    userId: '123456'
 }
 
 export default {
-  namespaced: true,
-  state
+    namespaced: true,
+    state
 }

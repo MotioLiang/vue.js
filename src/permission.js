@@ -5,10 +5,10 @@ import 'nprogress/nprogress.css'
 NProgress.configure({ showSpinner: false })
 
 router.beforeEach((to, from, next) => {
-  NProgress.start()
-  next()
+    NProgress.start()
+    next()
 })
 
 router.afterEach(() => {
-  NProgress.done()
+    NProgress.done()
 })

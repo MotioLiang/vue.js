@@ -10,13 +10,13 @@ import '@/filters'
 import '@/assets/icons'
 
 Vue.config.errorHandler = function (err, vm, info) {
-  console.log(err, vm, info)
+    console.log(err, vm, info)
 }
 
 Vue.config.productionTip = false
 
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app')
