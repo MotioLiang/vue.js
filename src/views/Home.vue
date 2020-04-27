@@ -1,20 +1,17 @@
 <template lang="pug">
   .home
-    img(:src="getImgUrl('logo.png')" alt="logo")
+    div(default-src="@/assets/images/logo.png")
+    img(src="@/assets/images/logo.png" alt="logo")
     base-hello(msg="Home")
     svg-icon(class="svg-rigth" icon-class="1" @click="handleSvg")
 </template>
 
 <script>
-import getImgUrl from '@/mixins/getImgUrl'
-
 import { createNamespacedHelpers } from 'vuex'
 const { mapState } = createNamespacedHelpers('user')
 
 export default {
   name: 'home',
-
-  mixins: [getImgUrl],
 
   computed: {
     ...mapState(['userName'])
@@ -34,6 +31,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// .home {
+//   background: url(../assets/images/logo.png);
+// }
 .svg-rigth {
   width: 20px;
   height: 20px;
