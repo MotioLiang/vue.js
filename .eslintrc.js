@@ -21,7 +21,9 @@ module.exports = {
     // js单引号
     quotes: ['warn', 'single'],
     // 缩进风格
-    indent: ['error', 4],
+    indent: ['error', 4, {
+      'SwitchCase': 1
+    }],
     //  结尾不要分号
     semi: ['error', 'never'],
     // 禁用 eval()
