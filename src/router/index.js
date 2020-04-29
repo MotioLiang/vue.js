@@ -3,24 +3,31 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-let routers = []
+const requireAll = require.context('./modules', true, /\.js$/)
 
-const requireAll = require.context('./', true, /\.js$/)
-
-requireAll.keys().forEach(url => {
-    if (url === './index.js') return
-    const routerModule = requireAll(url)
-    routers = [...routers, ...routerModule.default]
-})
+// 静态路由表
+let constantRoutes = requireAll.keys().reduce((modules, modulePath) => {
+    const routerModule = requireAll(modulePath)
+    return [...modules, ...routerModule.default]
+}, [])
 
 // 添加404
-routers.push({
+constantRoutes.push({
     path: '*',
     component: () => import(/*  webpackChunkName: "error404"  */ '@/views/error/404/Index.vue')
 })
 
-let router = new Router({
-    routes: routers
+const createRouter = () => new Router({
+    routes: constantRoutes
 })
+
+const router = createRouter()
+
+// Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
+// 重置路由
+export function resetRouter() {
+    const newRouter = createRouter()
+    router.matcher = newRouter.matcher // reset router
+}
 
 export default router
