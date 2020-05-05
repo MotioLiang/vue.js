@@ -1,8 +1,19 @@
 const path = require('path')
 const webpack = require('webpack')
 const LodashWebpackPlugin = require('lodash-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const resolve = dir => path.join(__dirname, dir)
+
+
+
+const cdn = {
+    js: [
+        '//cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js',
+        '//cdnjs.cloudflare.com/ajax/libs/vue-router/3.1.3/vue-router.min.js',
+        '//cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js'
+    ]
+}
 
 module.exports = {
     assetsDir: 'static',
@@ -10,12 +21,26 @@ module.exports = {
     productionSourceMap: false,
     configureWebpack: config => {
         if (process.env.NODE_ENV === 'production') {
-            config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
-            config.optimization.minimizer[0].options.terserOptions.compress.drop_debugger = true
+            // config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
+            // config.optimization.minimizer[0].options.terserOptions.compress.drop_debugger = true
+            config.plugins.push(
+                new UglifyJsPlugin({
+                    uglifyOptions: {
+                        warnings: false,
+                        compress: {
+                            drop_debugger: true,
+                            drop_console: true,
+                        }
+                    },
+                    sourceMap: false,
+                    parallel: true,
+                })
+            )
         }
     },
 
     chainWebpack: config => {
+
         config.module
             .rule('vue')
             .use('vue-loader')
@@ -34,10 +59,24 @@ module.exports = {
                     },
                 }
             })
+
         if (process.env.NODE_ENV === 'production') {
             config.plugin('loadshReplace')
                 .use(new LodashWebpackPlugin())
                 .end()
+
+            var externals = {
+                vue: 'Vue',
+                'vue-router': 'VueRouter',
+                axios: 'axios',
+            }
+            config.externals(externals)
+
+            config.plugin('html')
+                .tap(args => {
+                    args[0].cdn = cdn
+                    return args
+                })
         }
         config.plugin('ProvidePlugin')
             .use(new webpack.ProvidePlugin({
