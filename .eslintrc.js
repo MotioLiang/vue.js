@@ -19,23 +19,13 @@ module.exports = {
         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         // js单引号
-        quotes: [
-            'warn',
-            'single'
-        ],
+        quotes: ['warn', 'single'],
         // 缩进风格
-        indent: [
-            'error',
-            4,
-            {
-                SwitchCase: 1
-            }
-        ],
+        indent: ['error', 4, {
+            SwitchCase: 1
+        }],
         //  结尾不要分号
-        semi: [
-            'error',
-            'never'
-        ],
+        semi: ['error', 'never'],
         // 禁用 eval()
         'no-eval': 'error',
         'vue/attribute-hyphenation': 'error',
