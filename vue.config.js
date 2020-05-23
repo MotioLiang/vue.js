@@ -5,8 +5,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const resolve = dir => path.join(__dirname, dir)
 
-
-
 const cdn = {
     js: [
         '//cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js',
@@ -40,6 +38,12 @@ module.exports = {
     },
 
     chainWebpack: config => {
+        // 定义文件路径
+        config.resolve.alias
+            .set('@', resolve('src'))
+            .set('assets', resolve('src/assets'))
+            .set('components', resolve('src/components'))
+            .set('views', resolve('src/views'))
 
         config.module
             .rule('vue')
