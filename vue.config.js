@@ -82,11 +82,13 @@ module.exports = {
                     return args
                 })
         }
+
         config.plugin('ProvidePlugin')
             .use(new webpack.ProvidePlugin({
                 _: 'lodash'
             }))
             .end()
+
         config.module
             .rule('images')
             .use('url-loader')
@@ -94,10 +96,12 @@ module.exports = {
             .tap(options => Object.assign(options, {
                 limit: 4096
             }))
+
         config.module
             .rule('svg')
             .exclude.add(resolve('src/assets/icons'))
             .end()
+
         config.module
             .rule('icons')
             .test(/.svg$/)
