@@ -8,7 +8,12 @@
 </template>
 
 <script>
+import { queryData } from 'api/modules/queryData'
 export default {
+    async created() {
+        let data = await queryData()
+        console.log(data)
+    },
     methods: {
         handleSvg() {
             console.log('点击svg')

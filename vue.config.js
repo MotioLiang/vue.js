@@ -13,6 +13,12 @@ const cdn = {
     ]
 }
 
+const externals = {
+    'vue': 'Vue',
+    'vue-router': 'VueRouter',
+    'axios': 'axios'
+}
+
 module.exports = {
     assetsDir: 'static',
     publicPath: '/cs',
@@ -41,10 +47,12 @@ module.exports = {
         // 定义文件路径
         config.resolve.alias
             .set('@', resolve('src'))
+            .set('api', resolve('src/api'))
             .set('assets', resolve('src/assets'))
             .set('components', resolve('src/components'))
             .set('views', resolve('src/views'))
 
+        // 在这里添加需要使用静态资源的自定义元素
         config.module
             .rule('vue')
             .use('vue-loader')
@@ -58,8 +66,7 @@ module.exports = {
                         img: 'src',
                         image: ['xlink:href', 'href'],
                         use: ['xlink:href', 'href'],
-                        // 在这里添加需要使用静态资源的自定义元素
-                        'div': 'default-src',
+                        div: 'default-src',
                     },
                 }
             })
@@ -69,13 +76,8 @@ module.exports = {
                 .use(new LodashWebpackPlugin())
                 .end()
 
-            var externals = {
-                vue: 'Vue',
-                'vue-router': 'VueRouter',
-                axios: 'axios',
-            }
+            //  添加cdn
             config.externals(externals)
-
             config.plugin('html')
                 .tap(args => {
                     args[0].cdn = cdn
@@ -89,6 +91,7 @@ module.exports = {
             }))
             .end()
 
+        //  压缩图片位base64
         config.module
             .rule('images')
             .use('url-loader')

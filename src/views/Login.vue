@@ -1,8 +1,8 @@
 <template>
     <el-form
+        ref="loginFrom"
         :model="loginFrom"
         :rules="loginFormRules"
-        ref="loginFrom"
         label-position="left"
         label-width="0px"
         class="demo-ruleForm login-container"
@@ -12,16 +12,16 @@
         </h3>
         <el-form-item prop="account">
             <el-input
-                type="text"
                 v-model="loginFrom.account"
+                type="text"
                 auto-complete="off"
                 placeholder="账号"
             />
         </el-form-item>
         <el-form-item prop="checkPass">
             <el-input
-                type="password"
                 v-model="loginFrom.checkPass"
+                type="password"
                 auto-complete="off"
                 placeholder="密码"
             />
@@ -37,8 +37,8 @@
             <el-button
                 type="primary"
                 style="width:100%;"
-                @click.native.prevent="loginSubmit"
                 :loading="logining"
+                @click.native.prevent="loginSubmit"
             >
                 登录
             </el-button>
