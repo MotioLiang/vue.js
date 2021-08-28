@@ -9,22 +9,22 @@
         "test:unit": "vue-cli-service test:unit"
     },
     "dependencies": {
-        "axios": "^0.21.1",
-        "core-js": "^3.16.3",
-        "dayjs": "^1.10.6",
-        "element-ui": "^2.15.5",
-        "idb": "^6.1.2",
-        "lodash": "^4.17.21",
+        "axios": "^0.18.0",
+        "core-js": "^2.6.11",
+        "dayjs": "^1.8.25",
+        "element-ui": "^2.13.1",
+        "idb": "^5.0.2",
+        "lodash": "^4.17.15",
         "normalize.css": "^8.0.1",
         "nprogress": "^0.2.0",
-        "vue": "^2.6.14",
-        "vue-router": "^3.5.2",
-        "vuex": "^3.6.2"
+        "vue": "^2.6.11",
+        "vue-router": "^3.1.6",
+        "vuex": "^3.3.0"
     },
     "devDependencies": {
         "@vue/cli-plugin-babel": "^3.12.1",
         "@vue/cli-plugin-eslint": "^4.3.1",
-        "@vue/cli-plugin-unit-mocha": "^4.5.13",
+        "@vue/cli-plugin-unit-mocha": "^3.12.1",
         "@vue/cli-service": "^3.12.1",
         "@vue/test-utils": "1.0.0-beta.29",
         "babel-eslint": "^10.1.0",
@@ -40,7 +40,6 @@
         "sass-loader": "^7.3.1",
         "svg-sprite-loader": "^4.2.6",
         "uglifyjs-webpack-plugin": "^2.2.0",
-        "vue-cli-plugin-axios": "^0.0.4",
         "vue-cli-plugin-element": "^1.0.1",
         "vue-template-compiler": "^2.6.11"
     }

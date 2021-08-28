@@ -20,9 +20,26 @@ const externals = {
 }
 
 module.exports = {
+
     assetsDir: 'static',
+
     publicPath: '/cs',
+
     productionSourceMap: false,
+
+    devServer: {
+        proxy: {
+            '/api': {
+                target: process.env.VUE_APP_BASE_API,
+                ws: true,
+                changeOrigin: true,
+                pathRewrite: {
+                    '/api': ''
+                }
+            }
+        }
+    },
+
     configureWebpack: config => {
         if (process.env.NODE_ENV === 'production') {
             // config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true

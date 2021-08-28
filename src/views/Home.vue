@@ -1,14 +1,14 @@
 <template lang="pug">
-  .home
-    div(default-src="@/assets/images/logo.png")
-    img(src="@/assets/images/logo.png" alt="logo")
-    base-hello(msg="Home")
-    svg-icon(class="svg-rigth" icon-class="1" @click="handleSvg")
-    router-link(to="/about") about
+.home
+    div(default-src='@/assets/images/logo.png')
+    img(src='@/assets/images/logo.png', alt='logo')
+    base-hello(msg='Home')
+    svg-icon.svg-rigth(icon-class='1', @click='handleSvg')
+    router-link(to='/about') about
 </template>
 
 <script>
-import { queryData } from 'api/modules/queryData'
+import { queryData } from 'api/index'
 
 export default {
     async created() {
@@ -19,8 +19,8 @@ export default {
     methods: {
         handleSvg() {
             console.log('点击svg')
-        }
-    }
+        },
+    },
 }
 </script>
 
